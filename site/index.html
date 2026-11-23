@@ -1,0 +1,800 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://www.example.com/">
+      
+      
+      
+      
+        <link rel="next" href="./demo/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="./assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.1.2">
+    
+    
+      
+        <title>Basics - ASIT Vector Tiles Basemap Documentation</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="./assets/stylesheets/modern/main.ebb7f775.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="./assets/stylesheets/modern/palette.b60ce83d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        Skip to content
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="" title="ASIT Vector Tiles Basemap Documentation" class="md-header__button md-logo" aria-label="ASIT Vector Tiles Basemap Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">Navigation</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ASIT Vector Tiles Basemap Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Basics
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun-moon" viewBox="0 0 24 24"><path d="M12 2v2M14.837 16.385a6 6 0 1 1-7.223-7.222c.624-.147.97.66.715 1.248a4 4 0 0 0 5.26 5.259c.589-.255 1.396.09 1.248.715M16 12a4 4 0 0 0-4-4M19 5l-1.256 1.256M20 12h2"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">Search</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="" title="ASIT Vector Tiles Basemap Documentation" class="md-nav__button md-logo" aria-label="ASIT Vector Tiles Basemap Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    ASIT Vector Tiles Basemap Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Basics
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Basics
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#styles" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Styles
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tileset" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Tileset
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Tiles
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fonts-glyphs" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Fonts &amp; Glyphs
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sprite" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Sprite
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./demo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Demo
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./integration/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Integration
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Integration
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./integration/web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Web
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./integration/desktop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Desktop
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Data schema
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./styling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Style customization
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+
+<h1 id="asit-vector-tiles-basemap">ASIT Vector Tiles Basemap<a class="headerlink" href="#asit-vector-tiles-basemap" title="Permanent link">&para;</a></h1>
+<p>The ASIT Vector Tiles Basemap Service delivers map tiles and styles through a RESTful API. The vector tiles are provided according to the <a href="https://mapbox.github.io/vector-tile-spec/">Mapbox Vector Tile Specification</a> while the map styles implement the <a href="https://maplibre.org/maplibre-style-spec/">MapLibre Style Specification</a>. The service delivers vector tiles in <code>EPSG:3857</code> (Web Mercator) and <code>EPSG:2056</code> (LV95) for Switzerland.</p>
+<div class="admonition tip">
+<p class="admonition-title">Quick Start</p>
+<p>Most of the tools can implement vector tiles basemap by simply reading a <code>style.json</code> file. Use the following endpoint to get a certain style, replacing <code>{crs}</code> by the desired CRS EPSG code (3857 or 2056) and the <code>{style}</code> by the desired style (see below):</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">vt</span><span class="o">.</span><span class="n">asit</span><span class="o">-</span><span class="n">asso</span><span class="o">.</span><span class="n">ch</span><span class="o">/</span><span class="n">styles</span><span class="o">/</span><span class="p">{</span><span class="n">crs</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">style</span><span class="p">}</span><span class="o">/</span><span class="n">style</span><span class="o">.</span><span class="n">json</span>
+</span></code></pre></div>
+</div>
+<h2 id="styles">Styles<a class="headerlink" href="#styles" title="Permanent link">&para;</a></h2>
+<p>5 different styles are provided in both coordinate reference systems and available under the following endpoint:</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>https://vt.asit-asso.ch/styles/{crs}/{style}/style.json
+</span></code></pre></div>
+With the following parameters :</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Values and description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>style</code></td>
+<td><code>asit.color</code> : Color topographic basemap <small>Contains an hillshade WMTS layer from swisstopo </small> <br> <code>asit.light</code> : Light (greyscale like) topographic basemap <small>Contains an hillshade WMTS layer from swisstopo </small> <br> <code>asit.dark</code> : Dark (dark mode) topographic basemap <br> <code>asit.hybrid</code> : Hybrid topographic basemap with imagery as background <small>Contains an orthophoto WMTS layer from swisstopo </small><br> <code>asit.cadastral</code> : Cadastral basemap based on surveying data (covers only cantons of GE, VD, VS, FR, BE)</td>
+</tr>
+<tr>
+<td><code>crs</code></td>
+<td><code>3857</code> : Web Mercator coordinate system <br> <code>2056</code> : LV95 coordinate system. <small>The LV95 styles rely on LV95 tilesets using a custom tile grid <a href="/integration">see integration</a></small></td>
+</tr>
+</tbody>
+</table>
+<p>Example request to get the color basemap in EPSG:2056 (LV95):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>https://vt.asit-asso.ch/styles/2056/asit.color/style.json
+</span></code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>All information to fetch the vector tiles is embedded into the <code>style.json</code> file. It points to the <code>tiles.json</code> file, himself pointing to the z/x/y tiles endpoint. This is why for common tools, reading the <code>style.json</code> file is enough to implement a basemap.</p>
+</div>
+<h2 id="tileset">Tileset<a class="headerlink" href="#tileset" title="Permanent link">&para;</a></h2>
+<p>2 different tilesets are provided in both coordinates reference systems. Each set has a metadata json file, the <code>tiles.json</code> file available under the following endpoint :</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>https://vt.asit-asso.ch/tiles/{tileset}/{version}/{crs}/tiles.json
+</span></code></pre></div>
+With the following parameters :</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Values and description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tileset</code></td>
+<td><code>asit</code> : Tiles encoding topographic features used by <code>color</code>, <code>light</code>, <code>dark</code> and <code>hybrid</code> basemap <br> <code>asit.cadsatral</code> : Tiles encoding cadastral features used by <code>cadastral</code> basemap. Covers only cantons GE, VD, VS, FR, BE.</td>
+</tr>
+<tr>
+<td><code>version</code></td>
+<td><code>v0.1</code> : Version of tileset</td>
+</tr>
+<tr>
+<td><code>crs</code></td>
+<td><code>3857</code> : Web Mercator coordinate system <br> <code>2056</code> : LV95 coordinate system. <small>The LV95 tilesets use a custom tile grid <a href="/integration">see integration</a></small></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The <code>tiles.json</code> contains metadata about a tileset, i.e. tileset name, description, attribution, information about the features layers (fields and values) and the z/x/y endpoint the get the tiles. For the LV95 tileset, the custom tile grid is also describe in that file.</p>
+</div>
+<h2 id="tiles">Tiles<a class="headerlink" href="#tiles" title="Permanent link">&para;</a></h2>
+<p>Tiles from the 2 above tilesets are available under the following endpoint :</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>https://vt.asit-asso.ch/tiles/{tileset}/{version}/{crs}/{z}/{x}/{y}.mvt
+</span></code></pre></div>
+With the following parameters :</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Values and description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tileset</code></td>
+<td><code>asit</code> : Tiles encoding topographic features used by <code>color</code>, <code>light</code>, <code>dark</code> and <code>hybrid</code> basemap <br> <code>asit.cadsatral</code> : Tiles encoding cadastral features used by <code>cadastral</code> basemap. Covers only cantons GE, VD, VS, FR, BE.</td>
+</tr>
+<tr>
+<td><code>version</code></td>
+<td><code>v0.1</code> : Version of tileset</td>
+</tr>
+<tr>
+<td><code>crs</code></td>
+<td><code>3857</code> : Web Mercator coordinate system <br> <code>2056</code> : LV95 coordinate system. <small>The LV95 tilesets use a custom tile grid <a href="/integration">see integration</a></small></td>
+</tr>
+<tr>
+<td><code>z</code></td>
+<td><code>0-16</code> : zoom levels in the tile grid for the tileset <code>asit</code> <br> <code>0-17</code> : zoom levels in the tile grid for the tileset <code>asit.cadastral</code></td>
+</tr>
+<tr>
+<td><code>x</code></td>
+<td>Tile column (x coordinate in the tile grid)</td>
+</tr>
+<tr>
+<td><code>y</code></td>
+<td>Tile column (y coordinate in the tile grid)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="fonts-glyphs">Fonts &amp; Glyphs<a class="headerlink" href="#fonts-glyphs" title="Permanent link">&para;</a></h2>
+<p>All fonts used in basemaps are available as <code>.pbf</code> files (glyphs) to be read by modern vector tiles client and as standard web font (<code>.woff2</code> or <code>.ttf</code>) for interoperability with other client. They are shared across styles and have their own endpoint.</p>
+<p>Glyphs are available under the following endpoint :</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>https://vt.asit-asso.ch/fonts/{fontstack}/{range}.pbf
+</span></code></pre></div>
+<p>Where the <code>fontstack</code> contains the font family, fontweight and fontstyle and the <code>range</code> is used to select the right <code>.pbf</code> file.</p>
+<p>Standard web fonts are reference in <code>.css</code> files for interoperability and are available under the following endpoint :</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>https://vt.asit-asso.ch/fonts/web/{Font+Family}/{fontweight}{-fontstyle}.css
+</span></code></pre></div>
+<p>Where the font family, fontweight and fontstyle are 3 separated parameters.</p>
+<h2 id="sprite">Sprite<a class="headerlink" href="#sprite" title="Permanent link">&para;</a></h2>
+<p>Some of the basemaps use icons. Icons are encoded as sprite and are available at the level of a <code>style.json</code> under the following endpoints:</p>
+<p>Every sprite consists of <code>.png</code> file containing all icons and a <code>.json</code> file referencing their position.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>https://vt.asit-asso.ch/styles/{crs}/{style}/sprite.png
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>https://vt.asit-asso.ch/styles/{crs}/{style}/sprite.json
+</span></code></pre></div></p>
+<p>Icons for high resolution screen
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>https://vt.asit-asso.ch/styles/{crs}/{style}/sprite@2x.png
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>https://vt.asit-asso.ch/styles/{crs}/{style}/sprite@2x.json
+</span></code></pre></div></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+        
+          
+          <a href="./demo/" class="md-footer__link md-footer__link--next" aria-label="Next: Demo">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Demo
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":".","features":["announce.dismiss","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tabs.link","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.top","navigation.tracking","search.highlight","toc.integrate"],"redirect":null,"search":"./assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="./assets/javascripts/bundle.3cb411a8.min.js"></script>
+      
+    
+  </body>
+</html>

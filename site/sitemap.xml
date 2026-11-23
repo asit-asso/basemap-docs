@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+      <url>
+        <loc>https://www.example.com/</loc>
+      </url>
+      <url>
+        <loc>https://www.example.com/demo/</loc>
+      </url>
+      <url>
+        <loc>https://www.example.com/integration/</loc>
+      </url>
+      <url>
+        <loc>https://www.example.com/integration/desktop/</loc>
+      </url>
+      <url>
+        <loc>https://www.example.com/integration/web/</loc>
+      </url>
+      <url>
+        <loc>https://www.example.com/schema/</loc>
+      </url>
+      <url>
+        <loc>https://www.example.com/styling/</loc>
+      </url>
+</urlset>
