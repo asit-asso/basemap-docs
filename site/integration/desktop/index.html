@@ -379,6 +379,23 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Desktop
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="././" class="md-nav__link md-nav__link--active">
         
   
@@ -394,6 +411,35 @@
   
 
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#qgis" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        QGIS
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -542,7 +588,15 @@
 
   <h1>Desktop</h1>
 
-<p>ToDo</p>
+<h2 id="qgis">QGIS<a class="headerlink" href="#qgis" title="Permanent link">&para;</a></h2>
+<p>QGIS can integrate vector tiles layer but only in Web Mercator coordinate system (EPSG:3857).</p>
+<p>In the QGIS browser panel, right-click on "Vector Tiles" and choose "New Generic Connection..."</p>
+<p><img alt="QGIS browser" src="../../assets/qgis-browser-panel.png" width="500" /></p>
+<p>In the Vector Tiles Connection window, name the new connection the way you want, paste the URL to a <code>style.json</code> file (see <a href="../../#styles">styles</a>), set the min and max zoom level of the underlying tileset (see <a href="../../#tiles">tiles</a>) and click ok.</p>
+<p><img alt="QGIS vt connection" src="../../assets/qgis-vt-connection.png" width="600" /></p>
+<p>You can now load the new layer on the canvas.</p>
+<p><strong>Caveat</strong></p>
+<p>The labelling defined in the <code>style.json</code> files are translated as QGIS labels and are therefore always rendered on the top of every layers on the canvas. You can prevent that with overlapping vector layers by setting their labels as <code>blocking</code> with maximum weight.</p>
 
 
 

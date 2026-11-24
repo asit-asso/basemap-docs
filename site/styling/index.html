@@ -484,7 +484,20 @@
 
 
 <h1 id="customizing-the-style">Customizing the style<a class="headerlink" href="#customizing-the-style" title="Permanent link">&para;</a></h1>
-<p>ToDo</p>
+<p>One big advantage of vector tiles is that the rendering is made on client side. It's therefore very light to implement new styles to create different basemaps. All you need is to set up a new styles that consumes the same vector tiles data stream. </p>
+<p>You can then : </p>
+<ul>
+<li>Remove objects based on attributes or even entire layer (see <a href=".././schema/">data schema</a>)</li>
+<li>Change objects color, width, opacity and other paintings properties based (or not) on zoom level</li>
+<li>Apply offset to geometries</li>
+<li>Change the way the labelling is done (placement, size, text, ...)</li>
+<li>Change the way the icons are rendered (placement, size, ...)</li>
+<li>Add your own raster or vector data source and mix it with our tileset</li>
+<li>and much more, actually everything that the <a href="https://maplibre.org/maplibre-style-spec/">MapLibre Style Specification</a> and our <a href=".././schema/">data schema</a> support</li>
+</ul>
+<p>To have a glimpse of what's possible, copy your favorite <code>style.json</code> (see <a href=".././#styles">styles</a>) file locally and load it into the <a href="https://maputnik.github.io/">maputnik</a> application. Only works with Web Mercator tileset !</p>
+<p>Once you are happy with your own <code>style.json</code> file, either keep it locally for your desktop app or upload it on your own server for your web application. You can also tweak the style at runtime with the <a href="https://maplibre.org/maplibre-gl-js/docs/">MapLibre GL JS</a> or <a href="https://openlayers.org/">OpenLayers</a> libraries.</p>
+<p><strong>No inspiration ?</strong> Try our <a href=".././demo/#basemaps-in-epsg3857">style generator</a> !</p>
 
 
 

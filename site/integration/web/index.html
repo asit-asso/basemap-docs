@@ -434,6 +434,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="OpenLayers in LV95">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-raster-source-with-different-tile-grid" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Adding raster source with different tile grid
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -615,7 +632,7 @@
 <h1 id="web">Web<a class="headerlink" href="#web" title="Permanent link">&para;</a></h1>
 <h2 id="maplibre-gl-js">MapLibre GL JS<a class="headerlink" href="#maplibre-gl-js" title="Permanent link">&para;</a></h2>
 <p>MapLibre is one of the most performant client to render vector tiles basemap but does not work with the swiss LV95 coordinate system.</p>
-<p>After importing the necessary dependencies and creating a <code>map</code> container, you simply need to point to a <code>style.json</code> file :</p>
+<p>After importing the necessary dependencies and creating a <code>map</code> container, you simply need to point to a <code>style.json</code> file (see <a href="../../#styles">styles</a>) :</p>
 <div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    ...
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://unpkg.com/maplibre-gl@^6.10.0/dist/maplibre-gl.css"</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="p">/&gt;</span>
@@ -638,7 +655,7 @@
 </span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 </span></code></pre></div>
 <h2 id="openlayers">OpenLayers<a class="headerlink" href="#openlayers" title="Permanent link">&para;</a></h2>
-<p>With the help of the <a href="https://openlayers.org/ol-mapbox-style/">ol-mapbox-style</a> plugin, OpenLayers can also render vector tiles by simply reading a <code>style.json</code> file.</p>
+<p>With the help of the <a href="https://openlayers.org/ol-mapbox-style/">ol-mapbox-style</a> plugin, OpenLayers can also render vector tiles by simply reading a <code>style.json</code> file (see <a href="../../#styles">styles</a>).</p>
 <p>First import the necessary OpenLayers and ol-mapbox-style dependencies :</p>
 <div class="language-html highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    ...
@@ -754,7 +771,7 @@
 </span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">    </span><span class="p">...</span>
 </span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></code></pre></div>
-<p>Finally, we need to create a new vector tile layer in OpenLayers with the LV95 coordinate system and the tile grid described above, apply a <code>style.json</code> to it using the ol-mapbox-style function <code>olms.applyStyle</code> and add it to the map instance. This way, it's possible to create a vector tile layer in a custom coordinate system and a custom tile grid.</p>
+<p>Finally, we need to create a new vector tile layer in OpenLayers with the LV95 coordinate system and the tile grid described above, apply a <code>style.json</code> (see <a href="../../#styles">styles</a>) to it using the ol-mapbox-style function <code>olms.applyStyle</code> and add it to the map instance. This way, it's possible to create a vector tile layer in a custom coordinate system and a custom tile grid. </p>
 <div class="language-html highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="p">...</span>
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">layer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">VectorTile</span><span class="p">({</span>
@@ -778,6 +795,12 @@
 </span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="w">    </span><span class="nx">map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">layer</span><span class="p">);</span>
 </span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>In the example above, the tile grid, the projection, the tiles URL and the source name <code>asit.cadastral</code> are hardcoded. But these information are available either in the <code>style.json</code> or in the <code>tiles.json</code> file and can be read by your client to have a style and tileset agnostic solution.</p>
+</div>
+<h4 id="adding-raster-source-with-different-tile-grid">Adding raster source with different tile grid<a class="headerlink" href="#adding-raster-source-with-different-tile-grid" title="Permanent link">&para;</a></h4>
+<p>Work in progress...</p>
 
 
 

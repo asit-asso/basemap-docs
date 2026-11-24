@@ -3,7 +3,7 @@
 ## MapLibre GL JS
 MapLibre is one of the most performant client to render vector tiles basemap but does not work with the swiss LV95 coordinate system.
 
-After importing the necessary dependencies and creating a `map` container, you simply need to point to a `style.json` file :
+After importing the necessary dependencies and creating a `map` container, you simply need to point to a `style.json` file (see [styles](../index.md#styles)) :
 
 
 ```html
@@ -30,7 +30,7 @@ After importing the necessary dependencies and creating a `map` container, you s
 ```
 
 ## OpenLayers
-With the help of the [ol-mapbox-style](https://openlayers.org/ol-mapbox-style/) plugin, OpenLayers can also render vector tiles by simply reading a `style.json` file.
+With the help of the [ol-mapbox-style](https://openlayers.org/ol-mapbox-style/) plugin, OpenLayers can also render vector tiles by simply reading a `style.json` file (see [styles](../index.md#styles)).
 
 First import the necessary OpenLayers and ol-mapbox-style dependencies :
 
@@ -170,7 +170,8 @@ Then, we initiate a map instance with a view in the LV95 coordinate system and w
 </script>
 ```
 
-Finally, we need to create a new vector tile layer in OpenLayers with the LV95 coordinate system and the tile grid described above, apply a `style.json` to it using the ol-mapbox-style function `olms.applyStyle` and add it to the map instance. This way, it's possible to create a vector tile layer in a custom coordinate system and a custom tile grid.
+Finally, we need to create a new vector tile layer in OpenLayers with the LV95 coordinate system and the tile grid described above, apply a `style.json` (see [styles](../index.md#styles)) to it using the ol-mapbox-style function `olms.applyStyle` and add it to the map instance. This way, it's possible to create a vector tile layer in a custom coordinate system and a custom tile grid. 
+
 
 ```html
 <script>
@@ -196,3 +197,10 @@ Finally, we need to create a new vector tile layer in OpenLayers with the LV95 c
 	map.addLayer(layer);
 </script>
 ```
+
+!!! Tip
+
+	In the example above, the tile grid, the projection, the tiles URL and the source name `asit.cadastral` are hardcoded. But these information are available either in the `style.json` or in the `tiles.json` file and can be read by your client to have a style and tileset agnostic solution.
+
+#### Adding raster source with different tile grid
+Work in progress...

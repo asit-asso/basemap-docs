@@ -412,6 +412,23 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Data schema
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="././" class="md-nav__link md-nav__link--active">
         
   
@@ -427,6 +444,46 @@
   
 
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tileset-asit" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Tileset <code>asit</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tileset-asitcadastral" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Tileset <code>asit.cadastral</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -485,7 +542,404 @@
 
   <h1>Data schema</h1>
 
-
+<p>Information about data schema used in a tileset is already available in the metadata <code>tiles.json</code> file (see <a href="../../#tileset">tileset</a>). Encoded objects are separated into different layers available under the key <code>vector_layers</code>. For each of them, fields name and their description and possible values are available.</p>
+<p>We give here more detailed information about tilesets data schema.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Even if a layer is available for a given zoom level, it still may contain no features because we filter out objects that are too small for a given zoom level.</p>
+</div>
+<h2 id="tileset-asit">Tileset <code>asit</code><a class="headerlink" href="#tileset-asit" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Geometry</th>
+<th>Description</th>
+<th>Source</th>
+<th>min zoom</th>
+<th>max zoom</th>
+<th>Attributes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>landcover</code></td>
+<td>Polygon</td>
+<td>Land cover (natural surfaces)</td>
+<td>swisstopo <code>swissTLM3D</code> product</td>
+<td>0</td>
+<td>16</td>
+<td><strong><code>class</code></strong>: blockfield, cliff, glacier, open_wood, scree, scrub, snowfield, wetland, wood, wooded_area</td>
+</tr>
+<tr>
+<td><code>landuse</code></td>
+<td>Polygon</td>
+<td>Land use</td>
+<td>swisstopo <code>swissTLM3D</code> and <code>swissTMLRegio</code> products</td>
+<td>0</td>
+<td>16</td>
+<td><strong><code>class</code></strong>: campsite, caravan_site, cemetery, education, garden, golf, healthcare, horse_racing, leisure_park, orchard, park, pitch, pitch_area, plant_nursery, quarry, residential, swimming_pool_area, vineyard, zoo</td>
+</tr>
+<tr>
+<td><code>waterway</code></td>
+<td>Line</td>
+<td>Rivers, penstocks and lake axes</td>
+<td>swisstopo <code>swissTLM3D</code> product</td>
+<td>5</td>
+<td>16</td>
+<td><strong><code>class</code></strong>: river, penstock, lake_axis<br><strong><code>bridge</code></strong>: yes, no<br><strong><code>name</code></strong>: river name<br><strong><code>rank</code></strong>: ranking based on feature length (lower = more important)</td>
+</tr>
+<tr>
+<td><code>water</code></td>
+<td>Polygon</td>
+<td>Water bodies (lakes &amp; rivers)</td>
+<td>swisstopo <code>swissTLM3D</code> product</td>
+<td>5</td>
+<td>16</td>
+<td>no attribute</td>
+</tr>
+<tr>
+<td><code>water_pnt</code></td>
+<td>Point</td>
+<td>Lake labels</td>
+<td>swisstopo <code>swissTLM3D</code> product (centroïds of lakes)</td>
+<td>7</td>
+<td>16</td>
+<td><strong><code>name</code></strong>: lake name<br><strong><code>rank</code></strong>: ranking based on lake area (lower = more important)</td>
+</tr>
+<tr>
+<td><code>airport</code></td>
+<td>Polygon</td>
+<td>Airport areas</td>
+<td>swisstopo <code>swissTLM3D</code> product</td>
+<td>11</td>
+<td>16</td>
+<td>no attribute</td>
+</tr>
+<tr>
+<td><code>street</code></td>
+<td>Line</td>
+<td>Roads, paths and ferries</td>
+<td>swisstopo <code>swiss Map Vector 10</code> product for geometries and some attributes and swisstopo <code>Official street directory</code> for names</td>
+<td>5</td>
+<td>16</td>
+<td><strong><code>class</code></strong>: motorway, semi_motorway<br><small>from z7 only</small><br> 4m_street, 6m_street, 8m_street, 10m_street, ferry, motorway_link, rest_stop, service_link, trunk_link<br><small>from z13 only</small><br> 3m_street<br><small>from z14 only</small><br> 1m_path, 1m_path_fragment, 2m_path, 2m_path_fragment<br><strong><code>zorder</code></strong>: vertical order<br><strong><code>name (from z14 only)</code></strong>: street name (languages separated by <code>/</code> if multilingual)</td>
+</tr>
+<tr>
+<td><code>railway</code></td>
+<td>Line</td>
+<td>Railways</td>
+<td>swisstopo <code>swissTLM3D</code> product</td>
+<td>8</td>
+<td>16</td>
+<td><strong><code>zorder</code></strong>: vertical order<br><strong><code>name (from z14 only)</code></strong>: railway name</td>
+</tr>
+<tr>
+<td><code>parking</code></td>
+<td>Polygon</td>
+<td>Parking areas</td>
+<td>swisstopo <code>swissTLM3D</code> product</td>
+<td>14</td>
+<td>16</td>
+<td>no attribute</td>
+</tr>
+<tr>
+<td><code>building</code></td>
+<td>Polygon</td>
+<td>Buildings</td>
+<td>official surveying data for cantons GE, VD, VS, FR and BE and swisstopo <code>swissTLM3D</code> product for the rest</td>
+<td>12</td>
+<td>16</td>
+<td><strong><code>underground</code></strong>: yes, no</td>
+</tr>
+<tr>
+<td><code>railway_platform</code></td>
+<td>Polygon</td>
+<td>Railway platforms</td>
+<td>swisstopo <code>swissTLM3D</code> product</td>
+<td>14</td>
+<td>16</td>
+<td>no attribute</td>
+</tr>
+<tr>
+<td><code>boundary</code></td>
+<td>Polygon</td>
+<td>Administrative boundaries</td>
+<td>swisstopo <code>swissBOUNDARIES3D</code> product</td>
+<td>0</td>
+<td>16</td>
+<td><strong><code>class</code></strong>: country, canton</td>
+</tr>
+<tr>
+<td><code>address</code></td>
+<td>Point</td>
+<td>Building entrances (house numbers)</td>
+<td>official surveying data for cantons GE, VD, VS, FR and BE and swisstopo <code>Official directory of building addresses</code> product for the rest</td>
+<td>16</td>
+<td>16</td>
+<td><strong><code>housenumber</code></strong>: building entrance number<br><strong><code>orientation</code></strong>: Building entrance number rotation. Given in degree (CW from east = 0)</td>
+</tr>
+<tr>
+<td><code>place</code></td>
+<td>Point</td>
+<td>Place names</td>
+<td>swisstopo <code>swissTLM3D</code> product for geometries and attributes and swisstopo <code>swissBOUNDARIES3D</code> for some attributes</td>
+<td>4</td>
+<td>16</td>
+<td><strong><code>class</code></strong>: location<br><small>from z14 only</small><br> suburb, quarter, neighbourhood, locality<br><strong><code>name</code></strong>: default name<br><strong><code>population</code></strong>: &gt;100_000<br><small>from z6 only</small><br> 50_000-100_000<br><small>from z7 only</small><br>10_000-49_999<br><small>from z10 only</small><br>2000-9999<br><small>from z11 only</small><br> 1000-1999<br><small>from z12 only</small><br>100-999<br><small>from z13 only</small><br>50-99<br><small>from z14 only</small><br> 20-49, &lt;20<br><strong><code>rank</code></strong>: ranking based on population (lower = more important)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tileset-asitcadastral">Tileset <code>asit.cadastral</code><a class="headerlink" href="#tileset-asitcadastral" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Geometry</th>
+<th>Description</th>
+<th>Source</th>
+<th>min zoom</th>
+<th>max zoom</th>
+<th>Attributes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>landcover_water</code></td>
+<td>Polygon</td>
+<td>Water land cover</td>
+<td>official surveying data</td>
+<td>0</td>
+<td>17</td>
+<td>no attribute</td>
+</tr>
+<tr>
+<td><code>landcover_wood</code></td>
+<td>Polygon</td>
+<td>Wooded land cover</td>
+<td>official surveying data</td>
+<td>0</td>
+<td>17</td>
+<td>no attribute</td>
+</tr>
+<tr>
+<td><code>landcover_artificial</code></td>
+<td>Polygon</td>
+<td>Artificial land cover</td>
+<td>official surveying data</td>
+<td>11</td>
+<td>17</td>
+<td><strong><code>class</code></strong>: street<br><small>from z15 only</small><br> other</td>
+</tr>
+<tr>
+<td><code>misc_object_ply</code></td>
+<td>Polygon</td>
+<td>Miscellaneous objects (areas)</td>
+<td>official surveying data</td>
+<td>12</td>
+<td>17</td>
+<td><strong><code>class</code></strong>: bridge<br><small>from z16 only</small><br> water, other</td>
+</tr>
+<tr>
+<td><code>building_underground</code></td>
+<td>Polygon</td>
+<td>Underground buildings</td>
+<td>official surveying data</td>
+<td>14</td>
+<td>17</td>
+<td>no attribute</td>
+</tr>
+<tr>
+<td><code>building</code></td>
+<td>Polygon</td>
+<td>Buildings</td>
+<td>official surveying data</td>
+<td>13</td>
+<td>17</td>
+<td>no attribute</td>
+</tr>
+<tr>
+<td><code>freestanding_roof</code></td>
+<td>Polygon</td>
+<td>Freestanding roofs</td>
+<td>official surveying data</td>
+<td>13</td>
+<td>17</td>
+<td>no attribute</td>
+</tr>
+<tr>
+<td><code>misc_object_lin</code></td>
+<td>Line</td>
+<td>Miscellaneous objects (lines)</td>
+<td>official surveying data</td>
+<td>12</td>
+<td>17</td>
+<td><strong><code>class</code></strong>: railway<br><small>from z15 only</small><br> path<br><small>from z16 only</small><br> sidewalk, water, other</td>
+</tr>
+<tr>
+<td><code>parcel</code></td>
+<td>Polygon</td>
+<td>Parcels</td>
+<td>official surveying data</td>
+<td>16</td>
+<td>17</td>
+<td>no attribute</td>
+</tr>
+<tr>
+<td><code>public_land</code></td>
+<td>Polygon</td>
+<td>Public land</td>
+<td>official surveying data</td>
+<td>16</td>
+<td>17</td>
+<td>no attribute</td>
+</tr>
+<tr>
+<td><code>boundary</code></td>
+<td>Polygon</td>
+<td>Administrative boundaries</td>
+<td>swisstopo <code>swissBOUNDARIES3D</code> product</td>
+<td>0</td>
+<td>17</td>
+<td><strong><code>class</code></strong>: country, canton<br><small>from z8 only</small><br> municipality</td>
+</tr>
+<tr>
+<td><code>boundary_point</code></td>
+<td>Point</td>
+<td>Boundary points</td>
+<td>official surveying data</td>
+<td>17</td>
+<td>17</td>
+<td><strong><code>class</code></strong>: marker, pin, cross_mark, stake</td>
+</tr>
+<tr>
+<td><code>planimetric_fixed_point_3</code></td>
+<td>Point</td>
+<td>Planimetric fixed points (category 3)</td>
+<td>official surveying data</td>
+<td>17</td>
+<td>17</td>
+<td><strong><code>class</code></strong>: marker, pin, cross_mark, stake</td>
+</tr>
+<tr>
+<td><code>planimetric_fixed_point_2</code></td>
+<td>Point</td>
+<td>Planimetric fixed points (category 2)</td>
+<td>official surveying data</td>
+<td>17</td>
+<td>17</td>
+<td><strong><code>class</code></strong>: accessible, inaccessible</td>
+</tr>
+<tr>
+<td><code>planimetric_fixed_point_1</code></td>
+<td>Point</td>
+<td>Planimetric fixed points (category 1)</td>
+<td>official surveying data</td>
+<td>17</td>
+<td>17</td>
+<td><strong><code>class</code></strong>: accessible, inaccessible</td>
+</tr>
+<tr>
+<td><code>altimetric_fixed_point_1</code></td>
+<td>Point</td>
+<td>Altimetric fixed points (category 1)</td>
+<td>official surveying data</td>
+<td>17</td>
+<td>17</td>
+<td>no attribute</td>
+</tr>
+<tr>
+<td><code>altimetric_fixed_point_2</code></td>
+<td>Point</td>
+<td>Altimetric fixed points (category 2)</td>
+<td>official surveying data</td>
+<td>17</td>
+<td>17</td>
+<td>no attribute</td>
+</tr>
+<tr>
+<td><code>street_label</code></td>
+<td>Line</td>
+<td>Street labels</td>
+<td>official surveying data</td>
+<td>14</td>
+<td>17</td>
+<td><strong><code>name</code></strong>: street name</td>
+</tr>
+<tr>
+<td><code>landcover_label</code></td>
+<td>Point</td>
+<td>Land cover labels</td>
+<td>official surveying data</td>
+<td>17</td>
+<td>17</td>
+<td><strong><code>name</code></strong>: label name (e.g. cantonal road, school, river, ...)<br><strong><code>orientation</code></strong>: label rotation. Given in degree (CW from east = 0)</td>
+</tr>
+<tr>
+<td><code>building_underground_label</code></td>
+<td>Point</td>
+<td>Underground building numbers</td>
+<td>official surveying data</td>
+<td>17</td>
+<td>17</td>
+<td><strong><code>building_number</code></strong>: official underground building number (e.g. ECA number for canton Vaud)<br><strong><code>orientation</code></strong>: number rotation. Given in degree (CW from east = 0)</td>
+</tr>
+<tr>
+<td><code>building_label</code></td>
+<td>Point</td>
+<td>Building numbers</td>
+<td>official surveying data</td>
+<td>17</td>
+<td>17</td>
+<td><strong><code>building_number</code></strong>: official building number (e.g. ECA number for canton Vaud)<br><strong><code>orientation</code></strong>: number rotation. Given in degree (CW from east = 0)</td>
+</tr>
+<tr>
+<td><code>freestanding_roof_label</code></td>
+<td>Point</td>
+<td>Freestanding roof numbers</td>
+<td>official surveying data</td>
+<td>17</td>
+<td>17</td>
+<td><strong><code>building_number</code></strong>: official freestanding roof number (e.g. ECA number for canton Vaud)<br><strong><code>orientation</code></strong>: number rotation. Given in degree (CW from east = 0)</td>
+</tr>
+<tr>
+<td><code>address</code></td>
+<td>Point</td>
+<td>Building entrances (house numbers)</td>
+<td>official surveying data</td>
+<td>17</td>
+<td>17</td>
+<td><strong><code>house_number</code></strong>: building entrance number<br><strong><code>orientation</code></strong>: number rotation. Given in degree (CW from east = 0)</td>
+</tr>
+<tr>
+<td><code>parcel_label</code></td>
+<td>Point</td>
+<td>Parcel numbers</td>
+<td>official surveying data</td>
+<td>17</td>
+<td>17</td>
+<td><strong><code>parcel_number</code></strong>: parcel number<br><strong><code>orientation</code></strong>: number rotation. Given in degree (CW from east = 0)</td>
+</tr>
+<tr>
+<td><code>public_land_label</code></td>
+<td>Point</td>
+<td>Public land numbers</td>
+<td>official surveying data</td>
+<td>17</td>
+<td>17</td>
+<td><strong><code>land_number</code></strong>: public land number<br><strong><code>orientation</code></strong>: number rotation. Given in degree (CW from east = 0)</td>
+</tr>
+<tr>
+<td><code>municipality_label</code></td>
+<td>Point</td>
+<td>Municipality names</td>
+<td>swisstopo <code>swissBOUNDARIES3D</code> product</td>
+<td>5</td>
+<td>16</td>
+<td><strong><code>name</code></strong>: municipality name<br><strong><code>rank</code></strong>: ranking based on population (lower = more important)</td>
+</tr>
+</tbody>
+</table>
 
 
 
