@@ -1,6 +1,6 @@
 [project]
 site_url = "https://www.example.com/"
-site_name = "ASIT Vector Tiles Basemap Documentation"
+site_name = "ASIT Basemap Documentation"
 # site_description = "Your project description"
 # site_author = "Your name"
 
@@ -59,7 +59,8 @@ features = [
   "toc.integrate",
 ]
 
-# logo = "assets/logo.png"
+logo = "assets/logo.png"
+favicon = "assets/logo.png"
 
 # [project.theme.icon]
 # logo = "lucide/smile"
