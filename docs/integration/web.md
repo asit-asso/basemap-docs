@@ -183,7 +183,7 @@ Finally, we need to create a new vector tile layer in OpenLayers with the LV95 c
 			format: new ol.format.MVT(),
 			tileGrid: tileGrid,
 			tileSize: 512,
-			url: "https://vt.asit-asso.ch/tiles/asit.cadastral.hires/v0.1/2056.asit/{z}/{x}/{y}.mvt"
+			url: "https://vt.asit-asso.ch/tiles/asit.cadastral/v1.0/2056.asit/{z}/{x}/{y}.mvt"
 		}),
 	});
 

@@ -26,7 +26,7 @@ Here are the main parameters of this tile grid. It's also available as an [OGC T
 In the LV95 tileset, the tile grid is also available directly in the `tiles.json` file under the `tileInfo` key :
 
 ```json
-https://vt.asit-asso.ch/tiles/asit.cadastral.hires/v0.1/2056.asit/tiles.json
+https://vt.asit-asso.ch/tiles/asit.cadastral/v1.0/2056.asit/tiles.json
 
 ...
 "tileInfo": {

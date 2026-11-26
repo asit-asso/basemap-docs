@@ -47,7 +47,7 @@ With the following parameters :
 | Parameter | Values and description |
 |---|---|
 | ``tileset`` | `asit` : Tiles encoding topographic features used by ``color``, ``light``, ``dark`` and ``hybrid`` basemap <br> `asit.cadsatral` : Tiles encoding cadastral features used by ``cadastral`` basemap. Covers only cantons GE, VD, VS, FR, BE.|
-| ``version`` | `v0.1` : Version of tileset |
+| ``version`` | `v1.0` : Version of tileset |
 | ``crs`` | `3857` : Web Mercator coordinate system <br> `2056` : LV95 coordinate system. <small>The LV95 tilesets use a custom tile grid [see integration](/integration)</small> |
 
 !!! Info
@@ -66,7 +66,7 @@ With the following parameters :
 | Parameter | Values and description |
 |---|---|
 | ``tileset`` | `asit` : Tiles encoding topographic features used by ``color``, ``light``, ``dark`` and ``hybrid`` basemap <br> `asit.cadsatral` : Tiles encoding cadastral features used by ``cadastral`` basemap. Covers only cantons GE, VD, VS, FR, BE.|
-| ``version`` | `v0.1` : Version of tileset |
+| ``version`` | `v1.0` : Version of tileset |
 | ``crs`` | `3857` : Web Mercator coordinate system <br> `2056` : LV95 coordinate system. <small>The LV95 tilesets use a custom tile grid [see integration](/integration)</small> |
 | ``z`` | `0-16` : zoom levels in the tile grid for the tileset `asit` <br> `0-17` : zoom levels in the tile grid for the tileset `asit.cadastral` |
 | ``x`` | Tile column (x coordinate in the tile grid) |
