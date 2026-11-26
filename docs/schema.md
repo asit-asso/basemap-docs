@@ -6,7 +6,7 @@ We give here more detailed information about tilesets data schema.
 
 	Even if a layer is available for a given zoom level, it still may contain no features because we filter out objects that are too small for a given zoom level.
 
-## Tileset `asit`
+## Tileset `asit.base`
 
 | Layer | Geometry | Description | Source | min zoom | max zoom | Attributes |
 |---|---|---|---|---|---|---|
